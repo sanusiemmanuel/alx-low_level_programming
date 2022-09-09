@@ -1,7 +1,7 @@
 #include<stdio.h>
 /*
 * main - Entry point
-* Description: 'Here is the description of the file
+* Description: 'Here is the description of the fil'
 * Return: Always 0 (Success)
 */
 int main(void)
