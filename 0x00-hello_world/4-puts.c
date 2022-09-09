@@ -1,9 +1,9 @@
 #include<stdio.h>
-/*
+/**
 *
 * main - Entry point
 *
-* Description of the file here
+* Description: 'Ths program does the below'
 *
 * Return: Always 0 (Success)
 *
