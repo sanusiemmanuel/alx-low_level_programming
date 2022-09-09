@@ -2,9 +2,9 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-/*
+/**
 * main - Entry point
-*
+* Description: This is a C program that prints exactly and that piece of art is useful
 *
 *
 * Return: Always 0 (Success)
