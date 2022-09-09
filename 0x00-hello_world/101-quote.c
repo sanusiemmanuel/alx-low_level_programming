@@ -4,7 +4,7 @@
 
 /**
 * main - Entry point
-* Description: This is a C program that prints exactly and that piece of art is useful
+* Description: This is a C program that prints a statement
 *
 *
 * Return: Always 0 (Success)
