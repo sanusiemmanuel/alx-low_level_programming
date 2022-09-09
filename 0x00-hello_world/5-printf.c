@@ -1,8 +1,7 @@
 #include<stdio.h>
-
 /*
 * main - Entry point
-* Description: printf usage
+* Description: 'Here is the description of the file
 * Return: Always 0 (Success)
 */
 int main(void)
