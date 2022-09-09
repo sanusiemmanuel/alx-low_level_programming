@@ -4,11 +4,11 @@
 
 /**
 *
-* * main - Entry point
+* main - Entry point
 *
-* *
+*Description: This program specifies sizes of files
 *
-* * Return: Always 0 (Success)
+* Return: Always 0 (Success)
 *
 */
 
