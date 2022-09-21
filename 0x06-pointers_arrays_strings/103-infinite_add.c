@@ -1,124 +1,53 @@
-#include "main.h"
-
+#include "holberton.h"
 /**
- * _strlen - a function that takes a pointer to an int as parameter and
- * updates the value it points to to 98...
- * @s: chaine of caractere
+ * infinite_add -  adds two numbers
+ * @n1: first number
+ * @n2: second number
+ * @r: result
+ * @size_r: result lenght
+ * Return: sum
  *
- * Return: 1 or 0
  */
-
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i])
-		i++;
-	return (i);
-}
-
-/**
- * _bigger - a function that takes a pointer to an int as parameter and
- * updates the value it points to to 98
- * @a: chaine of caractere
- * @b: chaine of caractere
- *
- * Return: the bigger of a and b
- */
-
-int _bigger(int a, int b)
-{
-	if (a <= b)
-		return (b);
-	else
-		return(a);
-}
-
-/**
- * rev_string - a function that takes a pointer to an int as parameter and
- * @s: chaine of caractere
- *
- * Return: 1 or 0
- */
-
-void rev_string(char *s)
-{
-	int i = 0, taille, k;
-	char c;
-
-	while (s[i] != '\0')
-		i++;
-
-	i--;
-	taille = i;
-	k = i / 2;
-	i = 0;
-
-	while (i <= k)
-	{
-		c = s[i];
-		s[i] = s[taille];
-		s[taille] = c;
-		i++;
-		taille--;
-	}
-}
-
-
-/**
-  * infinite_add - print numbers chars
-  * @n1: the chaine of caractere
-  * @n2: the chaine of caractere
-  * @r: the chaine of caractere
-  * @size_r: the chaine of caractere
-  * Return: 0
- **/
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
+
 {
-	char *bigger_ch, *smaller_ch, ret = '0';
-	int taille_n1, taille_n2;
-	int i = 0, j = 0;
+	/* local variable declaration */
+	int i = 0, j = 0, k, l = 0, f, s, d = 0;
 
-	taille_n1 = _strlen(n1);
-	taille_n2 = _strlen(n2);
-	
-	if (taille_n1 >= taille_n2)
-	{
-		bigger_ch = n1;
-		smaller_ch = n2;
-	}
-	else 
-	{
-		bigger_ch = n2;
-		smaller_ch = n1;
-	}
-	
-	if (size_r < _bigger(taille_n1, taille_n2))
-		return (0);
+	while (n1[i] != '\0')
+		i++;
+	while (n2[j] != '\0')
+		j++;
+	if (i > j)
+		l = i;
 	else
+		l = j;
+	if (l + 1 > size_r)
+		return (0);
+	r[l] = '\0';
+	for (k = l - 1 ; k >= 0 ; k--)
 	{
-		rev_string(bigger_ch);
-		rev_string(smaller_ch);
-		while(bigger_ch[j])
-		{
-			if(smaller_ch[i])
-			{
-				r[i] = (((smaller_ch[i] - '0') + (bigger_ch[i] - '0') + (ret - '0')) % 10) + '0';
-				ret = (((smaller_ch[i] - '0') + (bigger_ch[i] - '0') + (ret - '0')) / 10) + '0';
-			}
-			else
-			{
-				r[i] = (((bigger_ch[i] - '0') + (ret - '0')) % 10) + '0';
-				ret = (((bigger_ch[i] - '0') + ret) / 10);
-			}
-
-			i++;
-		}
-		rev_string(r);
-		rev_string(bigger_ch);
-		rev_string(smaller_ch);
-		return (r);
-
+		i--;
+		j--;
+		if (i >= 0)
+			f = n1[i] - '0';
+		else
+			f = 0;
+		if (j >= 0)
+			s = n2[j] - '0';
+		else
+			s = 0;
+		r[k] = (f + s + d) % 10 + '0';
+		d = (f + s + d) / 10;
 	}
+	if (d == 1)
+	{
+		r[l + 1] = '\0';
+		if (l + 2 > size_r)
+			return (0);
+		while (l-- >= 0)
+			r[l + 1] = r[l];
+		r[0] = d + '0';
+	}
+	return (r);
 }
