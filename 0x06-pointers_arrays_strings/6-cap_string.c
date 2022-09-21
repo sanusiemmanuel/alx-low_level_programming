@@ -2,7 +2,7 @@
 
 /**
  * upper - a function ...
- * @c: the caractere..
+ * @c: the caractere
  *
  * Return: 1 or 0.
  */
@@ -37,4 +37,3 @@ char	*cap_string(char *str)
 	}
 	return (str);
 }
-
